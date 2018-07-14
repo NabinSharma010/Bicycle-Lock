@@ -7,6 +7,11 @@ const char MAIN_page[] PROGMEM = R"=====(
 
     <script>
     
+    function getRandomInt(max) 
+    {
+      return Math.floor(Math.random() * Math.floor(max));
+     }
+     
  
     function s(u){var x = new XMLHttpRequest();x.open("GET", u+"?x="+getRandomInt(10000), true);x.send(null);}
     function ret(u){return function(e){
