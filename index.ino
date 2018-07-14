@@ -1,13 +1,14 @@
+//Including required Libraries
 #include <Adafruit_Fingerprint.h>
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
-
 #include "index.h"
-
 #include <Servo.h>
+
 Servo Left;
 Servo Right;
+
 bool opened=true;
 
 Adafruit_Fingerprint finger = Adafruit_Fingerprint(&Serial);
@@ -36,7 +37,7 @@ void Unlock(){
 void Lock(){
   Left.write(90);
   Right.write(90);
-  server.send(200, "text/html", "<h1>Bicycle has been Locked !</h1>");
+  server.send(200, "text/html", "<h1>Bicycle has been Locked !</h1>"); //Send HTTP status 200(Ok)and send Locked text
   
   }
 void setup()  
